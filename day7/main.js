@@ -86,12 +86,22 @@ const updatePost = (req,res)=>{
 
 }
 
-app.get('/posts',getPosts);
-app.get('/posts/:id',getPostsById);
-app.post('/posts',createPost);
-app.put('/posts/:id',modifyPost)
-app.delete('/posts/:id',deletePost);
-app.patch('/posts/:id',updatePost);
+// app.get('/posts',getPosts);
+// app.get('/posts/:id',getPostsById);
+// app.post('/posts',createPost);
+// app.put('/posts/:id',modifyPost)
+// app.delete('/posts/:id',deletePost);
+// app.patch('/posts/:id',updatePost);
+
+app.route('/posts')
+.get(getPosts)
+.post(createPost)
+
+app.route('/posts/:id')
+.get(getPostsById)
+.put(modifyPost)
+.delete(deletePost)
+.patch(updatePost)
 
 const port =8000;
 app.listen(port,()=>{
