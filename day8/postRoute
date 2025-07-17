@@ -1,0 +1,50 @@
+const express = require("express")
+const app = express()
+const mongoose = require("mongoose")
+const router = express.Router()
+const post = require("./postDB")
+module.exports = router;
+//create post 
+router.post("/",async(req,res)=>{
+    const {userId, title, body} = req.body
+    const newPost = new post({userId, title, body})
+    const savePost = await newPost.save()
+    res.status(201).json(savePost)
+})
+
+//get all posts
+router.get("/",async(req,res)=>{
+    const posts = await post.find()
+    res.json(posts)
+})
+
+//get post by id
+router.get("/:id",async (req,res)=>{
+    const postById = await post.findById(req.params.id)
+    if(!postById){
+        return res.status(404).json({message: "post not found"})
+    }
+    res.json(postById)
+})
+
+//update post
+router.put("/:id", async(req,res)=>{
+    const {title,body}= req.body
+    const updatedPost = await post.findByIdAndUpdate(req.params.id,{title,body})
+    res.json(updatedPost)
+})
+
+//delete post 
+router.delete("/:id", async(req,res)=>{
+    const deletedPost = await post.findByIdAndDelete(req.params.id)
+    res.json({message:"post deleted"})
+})
+
+//patch 
+router.patch("/:id",async(req,res)=>{
+    const patchPost = await post.findByIdAndUpdate(req.params.id,req.body)
+    res.json(patchPost)
+})
+
+
+
