@@ -1,0 +1,26 @@
+<nav class="navbar">
+  <div class="navbar-title">BookShelf</div>
+  <ul class="navbar-links">
+    <li><a (click)="selectGenre('home') " href="#">Home</a></li>
+    <li><a (click)="selectGenre('fiction')" href="#">Fiction</a></li>
+    <li><a (click)="selectGenre('non-fiction') "href="#">Non-Fiction</a></li>
+    <li><a (click)="selectGenre('fantasy') "href="#">Fantasy</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+    <div class="card" *ngFor="let post of genreFilter()">
+    <div class="card-header" >
+        <h3>{{post.title}}</h3>
+    </div>
+    <div class="card-body">
+        <p>{{post.body}}</p>
+    </div>
+    <div class="card-footer">
+        <p>Post by {{post.username}}</p>
+    </div>
+    <div class="card-genre">
+        <p>Genre:{{post.genre}}</p>
+    </div>
+</div>
+</div>
