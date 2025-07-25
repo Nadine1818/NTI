@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <title>Document</title>
+     
+</head>
+<body>
+    <div style="display: flex; gap: 20px; width: 100%; " >
+
+        <div style="margin: auto; height: 250px;">
+            <i class="fa-solid fa-circle " style="font-size: 200px; cursor: pointer; " id="circle"></i>
+            <input type="text" name="" id="circip" placeholder="enter radius" style="display:none; margin-bottom: 10px; margin-top: 10px;">
+            <button id="sub" style="display: none;">calculate</button>
+            <div id="circleRes" style="margin-top: 10px; margin-bottom: 10px;"></div>
+        </div>
+        
+        <div style="margin: auto; height: 250px">
+            <div id="rectangle" style="width:300px; height: 200px; background-color: black; cursor: pointer; border-radius: 10px;"></div>
+            <input type="text" name="" id="width" placeholder="enter width" style="display:none; margin-bottom: 10px; margin-top: 10px;">
+            <input type="text" name="" id="height" placeholder="enter height" style="display:none; margin-bottom: 10px; margin-top: 10px;">
+            <button id="subrect" style="display: none;">calculate</button>
+            <div id="rectRes" style="margin-top: 10px; margin-bottom: 10px;"></div>
+        </div>
+        
+        <div style="margin: auto; height: 250px">
+            <i class="fa-solid fa-square" id="square" style="font-size: 200px; cursor: pointer;"></i>
+            <input type="text" name="" id="side" placeholder="enter side length" style="display:none; margin-bottom: 10px; margin-top: 10px;">
+            <button id="subSquare" style="display: none;">calculate</button>
+            <div id="squareRes" style="margin-top: 10px; margin-bottom: 10px;"></div>
+        </div>
+        
+    </div>
+
+    
+    
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
